@@ -1,0 +1,21 @@
+// vim: ft=jsonc
+{
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["^quay/automation-.*/docker-bake.hcl$"],
+      "matchStrings": [
+        // https://docs.renovatebot.com/modules/datasource/github-releases/
+        "(?<name>.*)_VERSION\s?=\s?\"(?<currentValue>.*?)\".*# renovate: (?<datasource>.*?) depName=(?<depName>.*?).*"
+      ]
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["^quay/automation-base-.*/docker-bake.hcl$"],
+      "matchStrings": [
+        // https://docs.renovatebot.com/modules/datasource/docker/
+        "(?<name>.*)_TAG\s?=\s?\"(?<currentValue>.*?)\".*# renovate: (?<datasource>.*?) depName=(?<depName>.*?).*"
+      ]
+    }
+  ]
+}
