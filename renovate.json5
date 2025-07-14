@@ -7,8 +7,9 @@
       "managerFilePatterns": ["quay/automation-*/docker-bake.hcl"],
       "matchStrings": [
         // https://docs.renovatebot.com/modules/datasource/github-releases/
-        "\\s+(?<name>.*)\\s?=\\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>\\S+)(\\s+)?(?<comments>.*)?"
-      ]
+        "\\s+(?<name>.*)\\s?=\\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>\\S+)( versioning=(?<versioning>.*))?(\\s+)?(?<comments>.*)?"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ]
 }
