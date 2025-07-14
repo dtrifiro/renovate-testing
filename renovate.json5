@@ -4,18 +4,18 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["^quay/automation-.*/docker-bake.hcl$"],
+      "managerFilePatterns": ["quay/automation-*/docker-bake.hcl"],
       "matchStrings": [
         // https://docs.renovatebot.com/modules/datasource/github-releases/
-        "(?<name>.*)_VERSION\s?=\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>.*)(?<comments>\s.*)?"
+        "(?<name>.*)_VERSION\s?=\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>\S+)(\s+)?(?<comments>.*)?"
       ]
     },
     {
       "customType": "regex",
-      "managerFilePatterns": ["^quay/automation-base-.*/docker-bake.hcl$"],
+      "managerFilePatterns": ["quay/automation-base-*/docker-bake.hcl"],
       "matchStrings": [
         // https://docs.renovatebot.com/modules/datasource/docker/
-        "(?<name>.*)_TAG\s?=\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>.*)(?<comments>\s.*)?"
+        "\s+(?<name>.*)_TAG\s?=\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>\S+)(\s+)?(?<comments>\s.*)?"
       ]
     }
   ]
