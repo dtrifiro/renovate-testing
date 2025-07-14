@@ -7,7 +7,7 @@
       "managerFilePatterns": ["quay/automation-*/docker-bake.hcl"],
       "matchStrings": [
         // https://docs.renovatebot.com/modules/datasource/github-releases/
-        "(?<name>.*)_VERSION\s?=\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>\S+)(\s+)?(?<comments>.*)?"
+        "\\s+(?<name>.*)_VERSION\\s?=\\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>\\S+)(\\s+)?(?<comments>.*)?"
       ]
     },
     {
@@ -15,7 +15,7 @@
       "managerFilePatterns": ["quay/automation-base-*/docker-bake.hcl"],
       "matchStrings": [
         // https://docs.renovatebot.com/modules/datasource/docker/
-        "\s+(?<name>.*)_TAG\s?=\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>\S+)(\s+)?(?<comments>\s.*)?"
+        "\\s+(?<name>.*)_TAG\\s?=\\s?\"(?<currentValue>.*)\".*# renovate: (?<datasource>.*) depName=(?<depName>\\S+)(\\s+)?(?<comments>.*)?"
       ]
     }
   ]
