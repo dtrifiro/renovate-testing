@@ -1,5 +1,6 @@
 // vim: ft=jsonc
 {
+  "dependencyDashboard": true,
   "customManagers": [
     {
       "customType": "regex",
